@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://s4dcbf2uy4x3"]
+
+[ext_resource type="Texture2D" uid="uid://b2kr3vwxhe4m7" path="res://Assets/Circle.png" id="1_q8fny"]
+
+[sub_resource type="Curve" id="Curve_gh4jo"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.702847, 0.475698), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="ScoreParticlesControl" type="Control"]
+show_behind_parent = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("1_q8fny")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 600.0
+initial_velocity_max = 675.0
+scale_amount_min = 0.7
+scale_amount_curve = SubResource("Curve_gh4jo")
